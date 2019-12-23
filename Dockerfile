@@ -1,12 +1,11 @@
 FROM polynote/polynote:latest
 USER root
 
-WORKDIR /usr/src/app
-
 # Install pre-requisites needed for python dependencies
 RUN apt-get update
 RUN set -e; \
   apt-get install -y \ 
+    bash \
     gcc \
     g++ \
     libc-dev \
@@ -28,4 +27,5 @@ RUN pip3 install -r requirements.txt
 EXPOSE 8192
 
 USER polly
-CMD bash polynote/polynote
+COPY config.yml /opt/polynote
+ENTRYPOINT /opt/polynote/polynote.py
