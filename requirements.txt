@@ -8,7 +8,7 @@ jedi==0.15.2
 jep==3.9.0
 kiwisolver==1.1.0
 matplotlib==3.1.2
-numpy==1.18.0
+numpy==1.22.0
 pandas==0.25.3
 parso==0.5.2
 plotly==4.4.1
